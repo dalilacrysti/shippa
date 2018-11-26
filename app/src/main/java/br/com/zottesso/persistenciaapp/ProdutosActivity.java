@@ -10,8 +10,6 @@ import java.util.List;
 
 public class ProdutosActivity extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,13 +17,15 @@ public class ProdutosActivity extends AppCompatActivity {
 
 
 
+
         // Buscar todos os produtos do banco
         List<Produto> produtos = Produto.listAll(Produto.class);
 
-        ListView prodlis = (ListView)findViewById(R.id.lista);
+        ListView lista = (ListView) findViewById(R.id.lista);
 
-        ArrayAdapter<Produto> ap = new ArrayAdapter<Produto>( context: this, android.R.layout.single_list_item_1, produtos);
-        prodlis.setAdapter(ap);
+        ArrayAdapter<Produto> ap = new ArrayAdapter<Produto>(this, android.R.layout.simple_list_item_1, produtos);
+        lista.setAdapter(ap);
+
 
     }
 }
